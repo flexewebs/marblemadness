@@ -7,7 +7,7 @@
     transform: translate(-50%, -50%); 
 }
 
-#player1, #player2 { float: left; width: 300px; height: 100px; box-sizing: border-box; }
+#player1, #player2 { float: left; width: 300px; height: 120px; box-sizing: border-box; padding: 10px; }
 
 #player1 { background: pink;}
 #player2 { background: purple;}
@@ -28,3 +28,38 @@
 }
 
 .odd { background: #ddd;}
+
+.marble { 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, red, yellow, green, blue);
+    background-size: 200% 200%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: spin 10s linear infinite, gradientShift 10s linear infinite;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.marble2 { 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, purple, pink, turquoise, orange);
+    background-size: 200% 200%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: spin 10s linear infinite, gradientShift 10s linear infinite;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
